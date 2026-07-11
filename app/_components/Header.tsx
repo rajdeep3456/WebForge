@@ -23,7 +23,7 @@ const Header = () => {
         <div className="flex gap-2 items-center">
           <Image src={"./logo.svg"} alt="logo" width={50} height={50} />
           <h2 className="font-bold sm:text-lg max-md:tracking-tight md:text-2xl">
-            Vortex Builder
+            WebForge
           </h2>
         </div>
 

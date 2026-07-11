@@ -6,7 +6,7 @@ import Provider from "./provider";
 import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
-  title: "Vortex Builder — AI Website Builder",
+  title: "WebForge — AI Website Builder",
   description:
     "Generate, edit and explore stunning web designs with AI. Export production-ready code in seconds.",
 };

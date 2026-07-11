@@ -42,7 +42,7 @@ export function AppSidebar() {
       <SidebarHeader className="p-5">
         <div className="flex items-center gap-2">
           <Image src={"/logo.svg"} alt="logo" width={35} height={35} />
-          <h2 className="font-bold text-xl 2xl:text-2xl">Vortex Builder</h2>
+          <h2 className="font-bold text-xl 2xl:text-2xl">WebForge</h2>
         </div>
         <Link href={"/workspace"} className="mt-5 w-full">
           <Button className="w-full">+ Add New Project</Button>
