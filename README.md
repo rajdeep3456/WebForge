@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# WebForge 🛠️✨
 
-## Getting Started
+WebForge is an AI-powered web development platform that empowers users to generate, modify, and preview modern UI designs and code snippets through a seamless conversational AI interface. Stop writing boilerplate—just ask WebForge to forge it for you.
 
-First, run the development server:
+## 🌟 Features
 
+- **AI-Powered Code Generation:** Leverage Google Gemini AI to generate complete React components and UI layouts instantly.
+- **Interactive Live Preview:** See your generated UI designs rendered in real-time.
+- **Project & Frame Management:** Organize your workspace with dedicated projects and versioned design frames.
+- **Credit System:** Built-in user credit management for AI generation tasks.
+- **Authentication:** Secure, seamless user authentication and session management powered by Clerk.
+- **Serverless & Edge Ready:** Built for speed with Next.js App Router and edge-optimized data fetching.
+
+## 💻 Tech Stack
+
+- **Framework:** [Next.js](https://nextjs.org/) (App Router) & [React 19](https://react.dev/)
+- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/) & [Radix UI](https://www.radix-ui.com/)
+- **Database:** [Neon Serverless Postgres](https://neon.tech/)
+- **ORM:** [Drizzle ORM](https://orm.drizzle.team/)
+- **Authentication:** [Clerk](https://clerk.com/)
+- **AI Integration:** [Google Gemini API](https://deepmind.google/technologies/gemini/)
+- **Media Management:** [ImageKit](https://imagekit.io/)
+
+## 🚀 Getting Started
+
+### Prerequisites
+Make sure you have Node.js installed (v20+ recommended) and a package manager like `npm`, `yarn`, or `pnpm`.
+
+### 1. Clone the repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/your-username/webforge.git
+cd webforge
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install dependencies
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Setup Environment Variables
+Create a `.env` file in the root of your project and add the following keys. You will need to create accounts with Clerk, Neon, Google (for Gemini), and ImageKit to retrieve these:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+# Clerk Authentication
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_...
+CLERK_SECRET_KEY=sk_test_...
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
 
-## Learn More
+# Neon Database
+DATABASE_URL=postgresql://user:password@hostname/dbname?sslmode=require
 
-To learn more about Next.js, take a look at the following resources:
+# Google Gemini AI
+GEMINI_API_KEY=your_gemini_api_key
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# ImageKit (if applicable)
+NEXT_PUBLIC_PUBLIC_KEY=your_imagekit_public_key
+PRIVATE_KEY=your_imagekit_private_key
+NEXT_PUBLIC_URL_ENDPOINT=https://ik.imagekit.io/your_endpoint
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 4. Setup the Database
+Push the Drizzle schema to your Neon Postgres database:
+```bash
+npm run db:push
+```
 
-## Deploy on Vercel
+### 5. Run the Development Server
+```bash
+npm run dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the app in action!
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📜 Scripts
+
+- `npm run dev` - Starts the Next.js development server.
+- `npm run build` - Builds the application for production.
+- `npm run start` - Starts the production server.
+- `npm run lint` - Runs ESLint to catch errors and enforce code style.
+- `npm run db:push` - Synchronizes your database schema with Drizzle ORM.
+
+## 🤝 Contributing
+Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
